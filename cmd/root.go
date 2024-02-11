@@ -7,7 +7,7 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "Load Tester CLI em Go",
+	Use:   "load",
 	Short: "This is a CLI system developed in Go to conduct load testing on web services",
 	Long: `
 	This is a CLI system developed in Go to conduct load testing on web services. 

@@ -13,7 +13,7 @@ import (
 // execCmd represents the exec command
 func ExecuteCmd() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "Load Tester CLI em Go",
+		Use:   "load",
 		Short: "This command executes the flow",
 		Long:  `Providing the service URL, the total number of desired requests, and the quantity of simultaneous calls`,
 		Run: func(cmd *cobra.Command, args []string) {
@@ -24,6 +24,7 @@ func ExecuteCmd() *cobra.Command {
 			ok := utils.CheckFlags(url, request, concurrency)
 			if !ok {
 				cmd.Help()
+				return
 			}
 
 			result := tester.ExecuteTest(url, utils.ConvertNumber(request), utils.ConvertNumber(concurrency))
